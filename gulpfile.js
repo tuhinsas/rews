@@ -1,5 +1,6 @@
+process.env.DISABLE_NOTIFIER = true;
 var elixir = require('laravel-elixir');
-
+var gulp = require('gulp');
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -11,6 +12,23 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
-    mix.sass('app.scss');
+gulp.task("copyfiles",function(){
+
+	gulp.src("vendor/bower_components/jquery/dist/jquery.js")
+		.pipe(gulp.dest("resources/assets/js/"));
+
+	gulp.src("vendor/bower_components/uikit/less/**")
+		.pipe(gulp.dest("resources/assets/less/uikit/"));
+
+	gulp.src("vendor/bower_components/uikit/js/**")
+		.pipe(gulp.dest("resources/assets/js/uikit"));
+
+	gulp.src("vendor/bower_components/uikit/fonts/**")
+		.pipe(gulp.dest("public/fonts/"));
+	
 });
+
+elixir(function(mix) {
+    mix.less('app.less');
+});
+

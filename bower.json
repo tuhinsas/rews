@@ -1,0 +1,23 @@
+{
+  "name": "REWS",
+  "description": "Adaptive aggregation and personalized news Recommendation Application",
+  "main": "public/index.php",
+  "authors": [
+    "Fahim Shahriyer"
+  ],
+  "license": "Apache 2.0",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower_components/",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "uikit": "~2.24.3"
+  }
+}
