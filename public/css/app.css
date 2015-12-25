@@ -7270,6 +7270,12 @@ a.uk-thumbnail:focus {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+.uk-dropdown i {
+  display: inline-block;
+  width: 15px;
+  margin-right: 5px;
+  text-align: center;
+}
 /*
  * 1. Show dropdown
  * 2. Set animation
@@ -10758,6 +10764,9 @@ a.uk-datepicker-table-muted {
   h3 {
     page-break-after: avoid;
   }
+}
+body {
+  font-family: 'Lato';
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -30,5 +30,13 @@ gulp.task("copyfiles",function(){
 
 elixir(function(mix) {
     mix.less('app.less');
+
+    mix.scripts([
+    	'jquery.js',
+    	'uikit/uikit.js',
+    	'uikit/components/**'
+    	],
+    	'public/js/main.js'
+    )
 });
 
