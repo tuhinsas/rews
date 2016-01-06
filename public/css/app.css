@@ -8,7 +8,7 @@
  */
 html {
   /* 1 */
-  font: normal 14px / 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: normal 14px / 20px 'Lato';
   /* 2 */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -210,7 +210,7 @@ h4,
 h5,
 h6 {
   margin: 0 0 15px 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Lato';
   font-weight: normal;
   color: #444;
   text-transform: none;
@@ -10767,6 +10767,70 @@ a.uk-datepicker-table-muted {
 }
 body {
   font-family: 'Lato';
+}
+a {
+  transition: all 0.25s;
+}
+a:hover {
+  text-decoration: none;
+}
+#teaser {
+  background: #7474BF;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #7474BF, #348AC7);
+  position: relative;
+}
+#teaser-header {
+  margin: 25px 0 50px 0;
+  padding: 0 35px;
+  color: #ffffff !important;
+  background: transparent;
+}
+#teaser-header h1 {
+  margin-bottom: 0;
+}
+#teaser-nav a {
+  display: inline-block;
+  color: #ffffff;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+#teaser-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+#teaser-nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+#features {
+  padding: 100px 0;
+}
+#contact {
+  background: #212121;
+  color: #616161;
+  padding: 100px 0;
+}
+#contact-social {
+  text-align: right;
+}
+#contact-social a {
+  font-size: 24px;
+  padding: 0 10px;
+}
+.text-white {
+  color: #ffffff;
+}
+.text-thin {
+  font-weight: 100;
+}
+.vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -37,6 +37,15 @@ elixir(function(mix) {
     	'uikit/components/**'
     	],
     	'public/js/main.js'
-    )
+    );
 });
 
+elixir(function(mix) {
+	mix.browserSync({
+		proxy: {
+			target: "http://rews.dev",
+		},
+	    files: ["public/css/app.css", "public/js/*.js", "resources/views/**/*.php"],
+	    notify: false
+	});
+});

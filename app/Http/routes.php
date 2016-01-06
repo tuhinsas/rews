@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', ['middleware' => ['web','guest'], function () {
     return view('welcome');
-});
+}]);
 
 /*
 |--------------------------------------------------------------------------
