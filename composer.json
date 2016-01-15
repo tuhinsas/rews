@@ -17,10 +17,11 @@
     },
     "autoload": {
         "classmap": [
-            "database"
+            "database",
+            "app/Models"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "Rews\\": "app/"
         }
     },
     "autoload-dev": {

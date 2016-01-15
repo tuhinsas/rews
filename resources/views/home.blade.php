@@ -2,8 +2,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="uk-container uk-container-center">
-        <h3>News Feed</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet eum debitis odio doloremque reprehenderit, soluta eos illum dolor, culpa aspernatur consequatur vel odit modi optio ipsum fugit deleniti molestiae adipisci atque error saepe amet hic minima sint. Et qui eum quod, voluptatum assumenda accusamus ipsa. Temporibus beatae, dolorem corrupti deleniti ratione quia quaerat, architecto officiis, doloremque dolores adipisci distinctio sequi libero animi excepturi quod. Numquam illo in voluptates facere expedita culpa provident sapiente nostrum fugiat rem. Alias hic molestiae quibusdam excepturi autem quod reiciendis nostrum illo vitae tempora rem, veniam voluptatem sapiente debitis libero pariatur voluptate asperiores veritatis sint enim nam sit ea dolorem rerum? Odio saepe, eius sequi alias hic perspiciatis earum nam, asperiores ex, neque eaque labore incidunt? Molestiae accusantium at distinctio nihil doloremque nisi est assumenda blanditiis facere, quae eveniet aspernatur minus maxime numquam, illum porro asperiores. Tenetur molestias, odit illo adipisci aspernatur error aperiam animi, repellendus qui totam praesentium! Assumenda deserunt, beatae aliquam deleniti error delectus veniam, voluptates maxime molestiae tempora sequi eligendi, iure explicabo ducimus fugit minima eius sapiente eum doloribus corrupti nostrum itaque illum qui voluptatum! Architecto nobis animi ad libero ea doloribus voluptatum, ratione recusandae sint ullam temporibus, labore molestias. Expedita distinctio voluptas tenetur accusantium fugiat, suscipit animi officia illo vero veritatis consequatur, eius consequuntur quibusdam explicabo praesentium commodi culpa dolores voluptatem placeat nisi sint. Aliquam quibusdam commodi nemo rem, nobis perferendis itaque debitis! Soluta repellendus aliquam, ducimus labore! Est delectus pariatur aliquid, similique tempore, fugiat sapiente veritatis error, labore aut fuga inventore, soluta saepe tenetur odio harum reiciendis aperiam deleniti nobis mollitia! Facilis a aliquid provident voluptate nemo tenetur qui perspiciatis fugiat illo, doloribus eaque placeat accusamus, quasi quod mollitia, perferendis harum eum commodi libero. Reiciendis soluta recusandae ratione earum et, dicta ex doloribus obcaecati, aperiam voluptatem! Delectus omnis, earum non exercitationem deleniti magni, consectetur sit, doloremque inventore, optio aliquid numquam! Voluptatibus tenetur iste deserunt ea voluptatem aspernatur tempora sapiente fuga porro similique esse, non adipisci vero nobis animi, ipsa laboriosam quibusdam. Dignissimos magni magnam numquam blanditiis cumque recusandae doloribus itaque natus quibusdam ipsum, expedita optio odio pariatur provident quasi, reprehenderit modi accusantium dolorum quo maxime? Assumenda voluptas quisquam, voluptatem illo, non recusandae dolores temporibus mollitia provident ut accusamus laborum. Ad rerum quasi voluptas eaque placeat tenetur cupiditate ratione debitis odio, fugit asperiores aut dignissimos laudantium voluptatum et voluptatem necessitatibus. Dolores quaerat doloremque porro magni perferendis, dolorem deserunt illum sunt culpa earum, ullam laborum. Repellendus excepturi, accusamus nisi saepe dignissimos quos voluptatum optio, illum neque autem eos incidunt iure earum ipsam dolore tempore, iusto quae hic modi laborum nobis vitae facilis dicta. Delectus aperiam, voluptas maiores adipisci repellendus ea minus quia ipsa impedit saepe. Quibusdam aut unde, consequuntur aperiam natus minus, itaque numquam! Numquam, ullam, repellat. Repellat quos, sequi rem aperiam sapiente possimus, id sed, dolor culpa doloribus voluptas asperiores sint eligendi nam omnis ab illo explicabo pariatur. Dolores, debitis. Sit quo aliquid accusantium non, nisi a, rerum distinctio! Facilis, accusamus, maxime voluptatibus velit quod illum tempore aut unde incidunt amet atque!</p>
+<body class="wrapper-home">
+    <div id="left-sidebar">
+        <div class="uk-flex uk-flex-center uk-flex-space-between uk-flex-column uk-height-1-1">
+            <div>
+                <h1 class="text-white text-thin"><i class="uk-icon-newspaper-o"></i> <span class="uk-text-bold">R</span>EWS</h1>
+            </div>
+            <div>
+                <ul id="right-sidebar-nav">
+                    <li><a href="#"><i class="uk-icon-bolt"></i> Recent</a></li>
+                    <li><a href="#"><i class="uk-icon-fire"></i> Rocemmended</a></li>
+                    <li><a href="#"><i class="uk-icon-thumb-tack"></i> Pinned</a></li>
+                    <li><a href="#"><i class="uk-icon-heartbeat"></i> Favourites</a></li>
+                    <li><a href="#"><i class="uk-icon-user-secret"></i> People</a></li>
+                </ul>
+            </div>
+            <div>
+                <a href="#">
+                    <div class="uk-flex uk-flex-middle uk-flex-space-between">
+                        <div>   
+                            <img src="{{ url('thumbs/avatar.png')}}" alt="avatar" class="uk-border-circle" width="42px">
+                        </div>
+                        <div>Fahim Shahriyer</div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
+    <div id="right-sidebar">
+        
+    </div>
+</body>
 @endsection

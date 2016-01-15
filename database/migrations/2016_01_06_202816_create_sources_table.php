@@ -14,9 +14,13 @@ class CreateSourcesTable extends Migration
     {
         Schema::create('sources', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->unsigned();
             $table->string('name',128);
+            $table->string('type',64);
             $table->string('url',256);
+            $table->integer('category_id')->unsigned();
+            $table->boolean('autograb')->default(true);
+            $table->time('start')->default('12:00:00');
+            $table->time('duration')->default('06:00:00');
             $table->timestamps();
         });
     }

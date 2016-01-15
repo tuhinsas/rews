@@ -29,12 +29,18 @@ gulp.task("copyfiles",function(){
 });
 
 elixir(function(mix) {
+    mix.less([
+    	'admin.less'
+    	],
+    	'public/css/admin.css'
+    );
+
     mix.less('app.less');
 
     mix.scripts([
-    	'jquery.js',
-    	'uikit/uikit.js',
-    	'uikit/components/**'
+    	'vendor/jquery.js',
+    	'vendor/uikit/uikit.js',
+    	'vendor/uikit/components/**'
     	],
     	'public/js/main.js'
     );
@@ -45,7 +51,7 @@ elixir(function(mix) {
 		proxy: {
 			target: "http://rews.dev",
 		},
-	    files: ["public/css/app.css", "public/js/*.js", "resources/views/**/*.php"],
+	    files: ["public/css/app.css", "public/css/admin.css", "public/js/*.js", "resources/views/**/*.php"],
 	    notify: false
 	});
 });
