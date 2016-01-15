@@ -1,17 +1,24 @@
 @import "theme/flat/uikit.less";
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 body{
 	font-family: 'Lato';
 }
 a{
 	transition: all 0.25s;
+	color: #00BCD4;
 }
 a:hover{
 	text-decoration: none;
 }
 #teaser{
-	background: #7474BF; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to left, #7474BF , #348AC7); /* Chrome 10-25, Safari 5.1-6 */
+	background: #7474BF;
+	background: -webkit-linear-gradient(to left, #7474BF , #348AC7);
 	background: linear-gradient(to left, #7474BF , #348AC7);
 	position: relative;
 }
@@ -59,6 +66,66 @@ a:hover{
 		padding: 0 10px;
 	}
 }
+
+// Home Page
+.wrapper-home{
+	margin-left: 216px;
+	margin-right: 64px;
+	position: relative;
+}
+
+#left-sidebar{
+	width: 216px;
+	position: fixed;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #212121;
+	padding: 24px;
+	text-align: center;
+}
+#right-sidebar-nav{
+	list-style: none;
+	text-align: left;
+	padding: 0;
+	li{
+		padding: 12px 0;
+	}
+	a{
+		font-size: 12px;
+		font-weight: 700;
+		color: #616161;
+		text-transform: uppercase;
+		i{
+			display: inline-block;
+			width: 22px;
+			margin: 0 12px;
+			text-align: center;
+			font-size: 22px;
+		}	
+	}
+	a:hover{
+		color: #00BCD4;
+	}
+}
+#right-sidebar{
+	width: 64px;
+	position: fixed;
+	height: 100%;
+	right: 0;
+	top: 0;
+	background: #212121;
+
+}
+
+
+
+
+
+
+
+
+
 // Temporary Helpers
 
 .text-white{
