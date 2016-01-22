@@ -11,7 +11,11 @@ Route::group(['middleware' => 'web','namespace' => 'Admin', 'prefix' => 'admin']
     	return view('admin.dashboard');
     }]);
 
+    Route::get('admin/source/{source}/confirm', ['as' => 'admin.source.confirm', 'uses' => 'SourceController@confirm'] );
     Route::resource('source', 'SourceController');
+
+    Route::get('admin/category/{category}/confirm', ['as' => 'admin.category.confirm', 'uses' => 'CategoryController@confirm'] );
+    Route::resource('category', 'CategoryController');
 
 
 });

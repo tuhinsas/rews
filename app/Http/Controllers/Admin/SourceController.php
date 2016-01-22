@@ -1,12 +1,12 @@
 <?php
 
-namespace Rews\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
-use Rews\Models\Source;
+use App\Models\Source;
 use Illuminate\Http\Request;
 
-use Rews\Http\Requests;
-use Rews\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
 class SourceController extends Controller
 {
@@ -24,7 +24,9 @@ class SourceController extends Controller
      */
     public function index()
     {
-        $sources = $this->sources->paginate(5);
+        
+        $sources = $this->sources->paginate(10);
+
         return view('admin.source.index', compact('sources'));
     }
 
@@ -33,9 +35,9 @@ class SourceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Source $source)
     {
-        //
+        return view('admin.source.form', compact('source'));
     }
 
     /**
@@ -44,9 +46,11 @@ class SourceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\StoreSourceRequest $request)
     {
-        //
+        $this->sources->create($request->all());
+
+        return redirect(route('admin.source.index'))->with(['success' => 'New Source has been created']);
     }
 
     /**
@@ -68,7 +72,9 @@ class SourceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $source = $this->sources->findOrFail($id);
+
+        return view('admin.source.form',compact('source'));
     }
 
     /**
@@ -78,11 +84,21 @@ class SourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\UpdateSourceRequest $request, $id)
     {
-        //
+        $source = $this->sources->findOrFail($id);
+
+        $source->fill($request->all())->save();
+
+        return redirect(route('admin.source.edit', $source->id))->with('info','The Source has been updated.');
     }
 
+    public function confirm($id)
+    {   
+        $source = $this->sources->findOrFail($id);
+
+        return view('admin.source.confirm',compact('source'));
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -91,6 +107,10 @@ class SourceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $source = $this->sources->findOrFail($id);
+
+        $source->delete();
+
+        return redirect(route('admin.source.index'))->with(['info','The source has been deleted']);
     }
 }

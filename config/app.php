@@ -151,10 +151,12 @@ return [
         /*
          * Application Service Providers...
          */
-        Rews\Providers\AppServiceProvider::class,
-        Rews\Providers\AuthServiceProvider::class,
-        Rews\Providers\EventServiceProvider::class,
-        Rews\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        willvincent\Feeds\FeedsServiceProvider::class,
 
     ],
 
@@ -201,6 +203,8 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Feeds'     => willvincent\Feeds\Facades\FeedsFacade::class,
 
     ],
 

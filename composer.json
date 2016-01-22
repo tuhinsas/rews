@@ -6,7 +6,9 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "laravelcollective/html": "5.2.*",
+        "willvincent/feeds": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -21,7 +23,7 @@
             "app/Models"
         ],
         "psr-4": {
-            "Rews\\": "app/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {

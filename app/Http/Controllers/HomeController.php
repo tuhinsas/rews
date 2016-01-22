@@ -1,8 +1,8 @@
 <?php
 
-namespace Rews\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Rews\Http\Requests;
+use App\Http\Requests;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

@@ -5,11 +5,11 @@
 	<li><a href="#">All News</a></li>
 	<li><a href="#">New News</a></li>
 	<li><a href="{{ URL::route('admin.source.index' )}}">All Sources</a></li>
-	<li><a href="#">New Source</a></li>
+	<li><a href="{{ URL::route('admin.source.create' )}}">New Source</a></li>
 
 	<li class="uk-nav-header">Category</li>
-	<li><a href="#">All Categories</a></li>
-	<li><a href="">New Category</a></li>
+	<li><a href="{{ URL::route('admin.category.index') }}">All Categories</a></li>
+	<li><a href="{{ URL::route('admin.category.create') }}">New Category</a></li>
 
 	<li class="uk-nav-header">Users</li>
 	<li><a href="#">View All</a></li>

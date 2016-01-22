@@ -18,7 +18,8 @@
                 @include('admin.shared.sidebar')
             </div>
             <div class="uk-width-medium-3-4">
-               @yield('content') 
+                @include('errors.common')
+                @yield('content')
             </div>
 
         </div>

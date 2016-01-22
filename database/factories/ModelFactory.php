@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(Rews\User::class, function (Faker\Generator $faker) {
+$factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
@@ -20,7 +20,7 @@ $factory->define(Rews\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(Rews\Models\Source::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Source::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->word,
         'type' => $faker->word,

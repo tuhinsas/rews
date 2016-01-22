@@ -19,8 +19,9 @@ class CreateSourcesTable extends Migration
             $table->string('url',256);
             $table->integer('category_id')->unsigned();
             $table->boolean('autograb')->default(true);
-            $table->time('start')->default('12:00:00');
-            $table->time('duration')->default('06:00:00');
+            $table->time('start')->default('12:00');
+            $table->time('duration')->default('06:00');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
