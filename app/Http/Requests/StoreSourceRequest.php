@@ -27,11 +27,8 @@ class StoreSourceRequest extends Request
             'name' => ['required','alpha_num'],
             'type' => ['required','alpha_num'],
             'url'  => ['required','unique:sources','url'],
-            'category_id' => ['required','numeric'],
             'autograb' => ['boolean'],
-            'start' => ['date_format:H:m'],
-            'duration' => ['date_format:H:m'],
-            'active'    => ['boolean']
+            'status'    => ['in:published,hidden']
         ];
     }
 }

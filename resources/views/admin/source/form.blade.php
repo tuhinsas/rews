@@ -26,12 +26,12 @@
 	            {!! Form::text('url', null, ['class' => 'uk-width-1-1 uk-form-large']) !!}
 	        </div>
 	    </div>
-	    <div class="uk-form-row">
+	    <!-- <div class="uk-form-row">
 	        <label for="category_id" class="uk-form-label">Category</label>
 	        <div class="uk-form-controls">
 	            {!! Form::text('category_id', null, ['class' => 'uk-width-1-1 uk-form-large']) !!}
 	        </div>
-	    </div>
+	    </div> -->
 	    <div class="uk-form-row">
 	        <label for="autograb" class="uk-form-label">Autograb</label>
 	        <div class="uk-form-controls">
@@ -42,23 +42,11 @@
 	        </div>
 	    </div>
 	    <div class="uk-form-row">
-	        <label for="start" class="uk-form-label">Start Time</label>
+	        <label for="name" class="uk-form-label">Status</label>
 	        <div class="uk-form-controls">
-	        	{!! Form::text('start', null, ['class' => 'uk-width-1-1 uk-form-large', 'data-uk-timepicker']) !!}
-	        </div>
-	    </div>
-	    <div class="uk-form-row">
-	        <label for="duration" class="uk-form-label">Duration</label>
-	        <div class="uk-form-controls">
-	            {!! Form::text('duration', null, ['class' => 'uk-width-1-1 uk-form-large', 'data-uk-timepicker']) !!}
-	        </div>
-	    </div>
-	    <div class="uk-form-row">
-	        <label for="name" class="uk-form-label">Active</label>
-	        <div class="uk-form-controls">
-	            <select name="active" id="active">
-	            	<option value="1">Yes</option>
-	            	<option value="0">No</opton>
+	            <select name="status" id="status">
+	            	<option value="published">Published</option>
+	            	<option value="hidden">Hidden</opton>
 	            </select>
 	        </div>
 	    </div>

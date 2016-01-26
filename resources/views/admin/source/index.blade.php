@@ -5,11 +5,10 @@
 	<table class="uk-table">
 		<thead>
 			<tr>
-				<th>#</th>
 				<th>Name</th>
 				<th>Type</th>
-				<th>Category</th>
 				<th>Autograb</th>
+				<th>Status</th>
 				<th>Last Updated</th>
 				<th>Action</th>
 			</tr>
@@ -17,11 +16,10 @@
 		<tbody>
 			@foreach($sources as $source)
 			<tr>
-				<td>{{ $source->id }}</td>
 				<td>{{ $source->name }}</td>
 				<td>{{ $source->type }}</td>
-				<td>{{ $source->category }}</td>
 				<td>{{ $source->autograb }}</td>
+				<td>{{ $source->status}}</td>
 				<td>{{ $source->updated_at->diffForHumans() }}</td>
 				<td>
 					<div class="uk-button-group">
