@@ -12,7 +12,7 @@
 	<li><a href="{{ URL::route('admin.category.create') }}">New Category</a></li>
 
 	<li class="uk-nav-header">Users</li>
-	<li><a href="#">View All</a></li>
+	<li><a href="{{ URL::route('admin.user.index') }}">View All</a></li>
 
 	<li class="uk-nav-header">Pages</li>
 	<li><a href="#">New Page</a></li>

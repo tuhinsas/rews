@@ -22,7 +22,7 @@
 				<td>{{ $source->type }}</td>
 				<td>{{ $source->category }}</td>
 				<td>{{ $source->autograb }}</td>
-				<td>{{ $source->updated_at }}</td>
+				<td>{{ $source->updated_at->diffForHumans() }}</td>
 				<td>
 					<div class="uk-button-group">
 						<a href="{{ route('admin.source.edit',$source->id) }}" class="uk-button uk-button-primary"><i class="uk-icon-edit"></i> Edit</a>
