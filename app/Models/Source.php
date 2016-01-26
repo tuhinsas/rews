@@ -13,4 +13,14 @@ class Source extends Model
     protected $hidden = [
         'autograb', 'start', 'duration',
     ];
+
+    public function scopePublished($query)
+    {
+    	$query->where('published', '==', 'published');
+    }
+
+    public function scopeUnublished($query)
+    {
+    	$query->where('published', '==', 'hidden');
+    }
 }
