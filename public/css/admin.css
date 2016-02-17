@@ -10835,5 +10835,8 @@ a:hover {
   border: 1px solid rgba(0, 0, 0, 0.06);
   text-shadow: 0 1px 0 #fff;
 }
+#user-statistics canvas {
+  width: 100% !important;
+}
 
 /*# sourceMappingURL=admin.css.map */

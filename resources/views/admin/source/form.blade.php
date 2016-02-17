@@ -44,10 +44,7 @@
 	    <div class="uk-form-row">
 	        <label for="name" class="uk-form-label">Status</label>
 	        <div class="uk-form-controls">
-	            <select name="status" id="status">
-	            	<option value="published">Published</option>
-	            	<option value="hidden">Hidden</opton>
-	            </select>
+	        	{!! Form::select('status',['published' => 'Published','hidden' => 'Hidden']) !!}
 	        </div>
 	    </div>
 	    <div class="uk-form-row">

@@ -27,11 +27,8 @@ class UpdateSourceRequest extends Request
             'name' => ['required','alpha_num'],
             'type' => ['required','alpha_num'],
             'url'  => ['required','url','unique:sources,id,'.$this->get('id')],
-            'category_id' => ['required','numeric'],
             'autograb' => ['boolean'],
-            'start' => ['date_format:H:m'],
-            'duration' => ['date_format:H:m'],
-            'active'    => ['boolean']
+            'status'    => ['in:published,hidden']
         ];
     }
 }

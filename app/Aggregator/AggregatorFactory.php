@@ -18,7 +18,7 @@ class AggregatorFactory
 		$this->config = $config;
 	}
 
-	public function get($url = [], $limit = 0, $force = false)
+	public function make($url = [], $limit = 10, $force = false)
 	{
 		$this->simplepie = new SimplePie();
 
@@ -45,13 +45,21 @@ class AggregatorFactory
 			$this->simplepie->strip_attributes( false );
 		}
 
+
 		$this->simplepie->init();
 
+		
 		$this->simplepie->handle_content_type();
 
 		return $this->simplepie;
 	}
 
+	public function sanitize($data)
+	{
+
+		$this->simplepie->sanitize($data);
+	}
+	
 	protected function configure()
 	{
 		if($this->config['cache.disabled'])

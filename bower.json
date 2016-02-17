@@ -19,5 +19,8 @@
   "devDependencies": {
     "jquery": "~2.1.4",
     "uikit": "~2.24.3"
+  },
+  "dependencies": {
+    "Chart.js": "~1.0.2"
   }
 }

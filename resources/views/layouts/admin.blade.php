@@ -27,5 +27,6 @@
     </div>
     @include('admin.shared.footer')
     <script src="/js/main.js"></script>
+    <script src="/js/admin.js"></script>
 </body>
 </html>

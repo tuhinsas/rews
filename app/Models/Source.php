@@ -7,20 +7,31 @@ use Illuminate\Database\Eloquent\Model;
 class Source extends Model
 {
     protected $fillable = [
-        'name', 'type', 'url', 'category_id',
-    ];
-
-    protected $hidden = [
-        'autograb', 'start', 'duration',
+        'name', 'type', 'url', 'status'
     ];
 
     public function scopePublished($query)
     {
-    	$query->where('published', '==', 'published');
+    	$query->where('status', '=', 'published');
     }
 
     public function scopeUnublished($query)
     {
-    	$query->where('published', '==', 'hidden');
+    	$query->where('status', '=', 'hidden');
+    }
+
+    public function getStatusAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function getNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function articles()
+    {
+        return $this->hasMany('App\Models\Article');
     }
 }

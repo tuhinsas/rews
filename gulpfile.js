@@ -15,7 +15,7 @@ var gulp = require('gulp');
 gulp.task("copyfiles",function(){
 
 	gulp.src("vendor/bower_components/jquery/dist/jquery.js")
-		.pipe(gulp.dest("resources/assets/js/"));
+		.pipe(gulp.dest("resources/assets/js/vendor/"));
 
 	gulp.src("vendor/bower_components/uikit/less/**")
 		.pipe(gulp.dest("resources/assets/less/uikit/"));
@@ -27,7 +27,9 @@ gulp.task("copyfiles",function(){
 		.pipe(gulp.dest("public/fonts/"));
 	
 });
-
+elixir(function(mix) {
+    mix.copy('vendor/bower_components/Chart.js/Chart.js', 'resources/assets/js/vendor/');
+});
 elixir(function(mix) {
     mix.less([
     	'admin.less'
@@ -40,9 +42,16 @@ elixir(function(mix) {
     mix.scripts([
     	'vendor/jquery.js',
     	'vendor/uikit/uikit.js',
-    	'vendor/uikit/components/**'
+    	'vendor/uikit/components/**',
+    	'vendor/Chart.js'
     	],
     	'public/js/main.js'
+    );
+
+    mix.scripts([
+    	'admin/dashboard.js'
+    	],
+    	'public/js/admin.js'
     );
 });
 
@@ -51,7 +60,7 @@ elixir(function(mix) {
 		proxy: {
 			target: "http://rews.dev",
 		},
-	    files: ["public/css/app.css", "public/css/admin.css", "public/js/*.js", "resources/views/**/*.php"],
+	    files: ["public/css/app.css", "public/css/admin.css", "public/js/main.js", "public/js/admin.js", "resources/views/**/*.php"],
 	    notify: false
 	});
 });

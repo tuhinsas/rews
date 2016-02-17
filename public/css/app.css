@@ -10783,6 +10783,30 @@ a {
 a:hover {
   text-decoration: none;
 }
+.content-wrapper {
+  padding: 16px;
+}
+.mdl-grid {
+  margin: 0 0;
+}
+.news-card-wide {
+  width: 100%;
+  margin-bottom: 16px;
+  max-height: 200px;
+  border-radius: 4px;
+}
+.news-card-wide .thumbnail {
+  max-height: 200px;
+  width: 100%;
+  background-size: contain;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #eee;
+}
+.news-card-wide .mdl-card__supporting-text {
+  width: 100%;
+}
 #teaser {
   background: #7474BF;
   background: linear-gradient(to left, #7474BF, #348AC7);
@@ -10827,52 +10851,38 @@ a:hover {
   font-size: 24px;
   padding: 0 10px;
 }
-.wrapper-home {
-  margin-left: 216px;
-  margin-right: 64px;
-  position: relative;
+.mdl-layout__drawer {
+  border-right: 0px;
 }
-#left-sidebar {
-  width: 216px;
-  position: fixed;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: #212121;
-  padding: 24px;
-  text-align: center;
+.mdl-layout__drawer .mdl-navigation i {
+  margin-right: 16px;
 }
-#right-sidebar-nav {
-  list-style: none;
-  text-align: left;
-  padding: 0;
+.app-drawer {
+  background-color: #212121;
 }
-#right-sidebar-nav li {
-  padding: 12px 0;
+.app-drawer .mdl-navigation__link {
+  color: white !important;
 }
-#right-sidebar-nav a {
-  font-size: 12px;
-  font-weight: 700;
-  color: #616161;
-  text-transform: uppercase;
+.app-drawer .mdl-navigation__link i {
+  color: #757575;
 }
-#right-sidebar-nav a i {
-  display: inline-block;
-  width: 22px;
-  margin: 0 12px;
-  text-align: center;
-  font-size: 22px;
+.app-drawer .logo h1 {
+  margin-top: 10px;
+  margin-bottom: 0;
+  line-height: 64px;
 }
-#right-sidebar-nav a:hover {
-  color: #00BCD4;
+.auth-page {
+  background: #7474BF;
+  background: linear-gradient(to left, #7474BF, #348AC7);
 }
-#right-sidebar {
-  width: 64px;
-  position: fixed;
-  height: 100%;
-  right: 0;
-  top: 0;
-  background: #212121;
+.auth-card {
+  width: 100%;
+  padding: 25px;
+  border-radius: 4px;
+  background: #ffffff;
+}
+.weather-card {
+  width: 100%;
 }
 .text-white {
   color: #ffffff;
@@ -10885,6 +10895,15 @@ a:hover {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+.text-white {
+  color: white !important;
+}
+.text-grey {
+  color: #616161 !important;
+}
+.datails-description {
+  padding: 64px;
 }
 
 /*# sourceMappingURL=app.css.map */

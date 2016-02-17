@@ -31,6 +31,11 @@ class AggregatorServiceProvider extends ServiceProvider
 
             $config = config('aggregator');
 
+            if(!$config)
+            {
+                throw new \RunTimeException("Aggregator configuration not found");
+                
+            }
             return new AggregatorFactory($config);
         });
 

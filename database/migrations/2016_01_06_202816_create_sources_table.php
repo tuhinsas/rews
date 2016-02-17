@@ -17,6 +17,7 @@ class CreateSourcesTable extends Migration
             $table->string('name',128);
             $table->string('type',64);
             $table->string('url',256);
+            $table->integer('limit')->default(10)->unsigned();
             $table->boolean('autograb')->default(true);
             $table->enum('status',['published','hidden'])->default('published');
             $table->timestamps();

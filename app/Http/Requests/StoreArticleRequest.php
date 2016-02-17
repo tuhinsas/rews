@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class StoreSourceRequest extends Request
+class StoreArticleRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,9 @@ class StoreSourceRequest extends Request
     public function rules()
     {
         return [
-            'name' => ['required','alpha_num'],
-            'type' => ['alpha_num'],
-            'url'  => ['required','unique:sources','url'],
-            'autograb' => ['boolean'],
-            'status'    => ['in:published,hidden']
+            'title' => 'string',
+            'description' => 'string',
+            'url' => 'url',
         ];
     }
 }

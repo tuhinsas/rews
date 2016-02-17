@@ -16,6 +16,30 @@ a{
 a:hover{
 	text-decoration: none;
 }
+.content-wrapper{
+	padding: 16px;
+}
+.mdl-grid{
+	margin: 0 0;
+}
+.news-card-wide{
+	width: 100%;
+	margin-bottom: 16px;
+	max-height: 200px;
+	border-radius: 4px;
+	.thumbnail{
+		max-height: 200px;
+		width: 100%;
+		background-size: contain;
+		background-size: cover;
+		background-position: center; 
+		background-repeat: no-repeat;
+		background-color: #eee;
+	}
+	.mdl-card__supporting-text{
+		width: 100%;
+	}
+}
 #teaser{
 	background: #7474BF;
 	background: -webkit-linear-gradient(to left, #7474BF , #348AC7);
@@ -66,65 +90,55 @@ a:hover{
 		padding: 0 10px;
 	}
 }
+.mdl-layout__drawer {
+	border-right: 0px;
 
-// Home Page
-.wrapper-home{
-	margin-left: 216px;
-	margin-right: 64px;
-	position: relative;
-}
-
-#left-sidebar{
-	width: 216px;
-	position: fixed;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: #212121;
-	padding: 24px;
-	text-align: center;
-}
-#right-sidebar-nav{
-	list-style: none;
-	text-align: left;
-	padding: 0;
-	li{
-		padding: 12px 0;
-	}
-	a{
-		font-size: 12px;
-		font-weight: 700;
-		color: #616161;
-		text-transform: uppercase;
+	.mdl-navigation{
 		i{
-			display: inline-block;
-			width: 22px;
-			margin: 0 12px;
-			text-align: center;
-			font-size: 22px;
-		}	
-	}
-	a:hover{
-		color: #00BCD4;
+			margin-right: 16px;
+		}
 	}
 }
-#right-sidebar{
-	width: 64px;
-	position: fixed;
-	height: 100%;
-	right: 0;
-	top: 0;
-	background: #212121;
+// Home Page
 
+.app-drawer{
+	background-color: #212121;
+	
+	.mdl-navigation__link{
+		color: white !important;
+
+		i{
+			color: #757575;
+		}
+	}
+	.logo h1{
+		margin-top: 10px;
+		margin-bottom: 0;
+		line-height: 64px;
+	}
 }
 
 
 
+// Login Page
+.auth-page{
+	background: #7474BF;
+	background: -webkit-linear-gradient(to left, #7474BF , #348AC7);
+	background: linear-gradient(to left, #7474BF , #348AC7);
+}
+.auth-card{
+	width: 100%;
+	padding: 25px;
+	border-radius: 4px;
+	background: rgba(255, 255, 255, 1);
+}
 
+// Weather Card
+// 
 
-
-
-
+.weather-card{
+	width: 100%;
+}
 
 // Temporary Helpers
 
@@ -138,4 +152,19 @@ a:hover{
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+// Text Colors
+// 
+
+.text-white{
+	color: white !important;
+}
+.text-grey{
+	color: #616161 !important;
+}
+
+//details
+.datails-description{
+	padding: 64px; 
 }

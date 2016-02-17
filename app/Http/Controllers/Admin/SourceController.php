@@ -61,7 +61,9 @@ class SourceController extends Controller
      */
     public function show($id)
     {
-        //
+        $source = $this->sources->findOrFail($id);
+        
+        return view('admin.source.show',compact('source'));
     }
 
     /**

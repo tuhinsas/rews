@@ -3,7 +3,6 @@
         <a href="{{ url('/home')}}" class="uk-navbar-brand">REWS</a>
         <ul class="uk-navbar-nav">
             <li><a href="{{ url('/home')}}">Home</a></li>
-            <li><a href="{{ url('/profile')}}">Profile</a></li>
         </ul>
         <div class="uk-navbar-flip">
             <ul class="uk-navbar-nav">
