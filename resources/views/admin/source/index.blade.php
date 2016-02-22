@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 @section('title','Create New Source')
 @section('content')
-	<h1>All Sources</h1>
+	<h1>All Sources 
+		<span class="uk-align-right"><a href="{{route('admin.source.create')}}" class="uk-button uk-button-primary">Add New Source</a></span>
+	</h1>
 	<div class="uk-overflow-container">
 		<table class="uk-table">
 			<thead>
@@ -26,7 +28,7 @@
 					<td></td>
 					<td>
 						<div class="uk-button-group">
-							<a href="{{ route('admin.source.refresh',$source->id) }}" class="uk-button uk-button-primary"><i class="uk-icon-refresh"></i></a>
+						
 							<a href="{{ route('admin.source.edit',$source->id) }}" class="uk-button uk-button-primary"><i class="uk-icon-edit"></i></a>
 							<a href="{{ route('admin.source.confirm',$source->id) }}" class="uk-button uk-button-danger"><i class="uk-icon-trash"></i></a>
 						</div>

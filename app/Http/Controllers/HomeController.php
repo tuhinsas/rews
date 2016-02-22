@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Models\Article;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -25,8 +26,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (Auth::user()->type == 'admin') {
+
+            return redirect()->route('admin.dashboard');
+        }
+
         $articles = Article::orderBy('published_at','desc')->get();
-        return view('home',compact('articles'));
+        
+        return view('frontend.home',compact('articles'));
     }
 
     public function details()

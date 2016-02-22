@@ -34,4 +34,9 @@ class Source extends Model
     {
         return $this->hasMany('App\Models\Article');
     }
+
+    public function category()
+    {
+        return $this->belongsToMany('App\Models\Category');
+    }
 }

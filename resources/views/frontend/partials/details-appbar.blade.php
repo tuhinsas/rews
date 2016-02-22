@@ -1,7 +1,7 @@
 <header class="mdl-layout__header app-appbar">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title"><i class="material-icons">arrow_back</i></span>
+      <span class="mdl-layout-title"><a class="mdl-button mdl-js-button mdl-button--icon" href="{{ URL('/home')}}"><i class="material-icons">arrow_back</i></a></span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation -->

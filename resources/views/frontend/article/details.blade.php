@@ -16,11 +16,21 @@
         @include('frontend.partials.details-appbar')
         @include('frontend.partials.drawer')
         <div class="mdl-layout__content details-cover">
-            <div class="uk-cover-background" style="height: 350px; background-image: url(img/ESA-EARTH.jpg);"></div>
+            <div class="uk-cover-background"
+
+                @if($article->media != null)
+                    style="background-image: url('/images/{{ $article->media->path}}');height:350px;"
+                @endif
+            >
+            </div>
             <div class="datails-description">
-                <h1><strong>Hubble Telescope provides first look at a 'super-Earth' atmosphere</strong></h1>
-                <h3 class="uk-text-muted">From <a href="#">Mashable</a> at <strong>February 17,2016</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam enim laborum iure consequatur commodi exercitationem tenetur nisi laudantium debitis. Nobis adipisci possimus fugiat, maxime numquam sapiente, aperiam consequatur dolorum asperiores. Velit minima impedit et ex molestias ipsam eveniet quaerat nulla non cumque dignissimos aspernatur suscipit, error esse reiciendis numquam!</p>
+                <h1><strong>{{ $article->title}}</strong></h1>
+                <h3 class="uk-text-muted">From <a href="#">Mashable</a> at 
+                    <strong>{{ date('F d, Y - h:m a' , strtotime($article->published_at)) }}</strong>
+                </h3>
+                <p>{{ $article->description }}</p>
+
+                <a href="{{ $article->url }}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" target="_blank">Read More</a>
             </div>
         </div>
     </div>

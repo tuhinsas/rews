@@ -15,7 +15,7 @@
                 <h1 class="text-white text-thin"><i class="uk-icon-newspaper-o"></i> <span class="uk-text-bold">R</span>EWS</h1>
                 <div></div>
                 <div id="teaser-nav">
-                    <a href="#contact" data-uk-smooth-scroll>Contact</a>
+                    <a href="{{ url('/register') }}">Register</a>
                     <a class="active" href="{{ url('/login')}}">Login</a>
                 </div>
             </div>

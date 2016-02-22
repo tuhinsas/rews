@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Services\SourceUpdateService;
 
 class SourceController extends Controller
 {
@@ -37,7 +38,9 @@ class SourceController extends Controller
      */
     public function create(Source $source)
     {
-        return view('admin.source.form', compact('source'));
+        $categories = \App\Models\Category::lists('title','id');
+
+        return view('admin.source.form', compact('source','categories'));
     }
 
     /**
@@ -48,7 +51,11 @@ class SourceController extends Controller
      */
     public function store(Requests\StoreSourceRequest $request)
     {
-        $this->sources->create($request->all());
+        $source = $this->sources->create($request->all());
+
+        $categoryId = $request->input('category');
+
+        $source->category()->attach($categoryId);
 
         return redirect(route('admin.source.index'))->with(['success' => 'New Source has been created']);
     }
@@ -63,7 +70,9 @@ class SourceController extends Controller
     {
         $source = $this->sources->findOrFail($id);
         
-        return view('admin.source.show',compact('source'));
+        $articles = $source->articles()->orderBy('created_at','desc')->paginate(10);
+
+        return view('admin.source.show',compact('source','articles'));
     }
 
     /**
@@ -100,6 +109,16 @@ class SourceController extends Controller
         $source = $this->sources->findOrFail($id);
 
         return view('admin.source.confirm',compact('source'));
+    }
+
+
+    public function refresh($id)
+    {
+        $update = new SourceUpdateService;
+
+        $update->updateSource($id);
+
+        return redirect(route('admin.source.show',$id))->with('info', 'The source has been refreshed');
     }
     /**
      * Remove the specified resource from storage.

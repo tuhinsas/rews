@@ -17,18 +17,19 @@ Route::get('images/{filename}', function ($filename)
     return $response;
 });
 
-Route::group(['middleware' => 'web','namespace' => 'Admin', 'prefix' => 'admin'], function () {
+Route::group(['middleware' => ['web','auth','admin'],'namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
-    Route::get('/', [ 'as' => 'admin.dashboard', function(){
-    	return view('admin.dashboard');
-    }]);
+    Route::get('/', [ 'as' => 'admin.dashboard', 'uses' => 'DashboardController@index']);
 
-    Route::get('source/{source}/refresh', ['as' => 'admin.source.refresh', 'uses' => 'NewsController@getArticles'] );
+    Route::get('source/{source}/refresh', ['as' => 'admin.source.refresh', 'uses' => 'SourceController@refresh'] );
     Route::get('source/{source}/confirm', ['as' => 'admin.source.confirm', 'uses' => 'SourceController@confirm'] );
     Route::resource('source', 'SourceController');
 
     Route::get('category/{category}/confirm', ['as' => 'admin.category.confirm', 'uses' => 'CategoryController@confirm'] );
     Route::resource('category', 'CategoryController');
+
+    Route::get('article/{article}/confirm', ['as' => 'admin.article.confirm', 'uses' => 'ArticleController@confirm'] );
+    Route::resource('article', 'ArticleController');
 
     Route::get('user/{user}/confirm', ['as' => 'admin.user.confirm', 'uses' => 'UserController@confirm'] );
     Route::resource('user', 'UserController');
@@ -36,8 +37,6 @@ Route::group(['middleware' => 'web','namespace' => 'Admin', 'prefix' => 'admin']
     Route::get('news', ['uses' => 'ArticleController@getArticles']);
     Route::get('og', ['uses' => 'NewsController@getOg']);
     
-    
-
 });
 
 Route::group(['middleware' => 'web'], function () {
@@ -45,5 +44,11 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home', 'HomeController@index');
 
-    Route::get('/details', 'HomeController@details');
+    Route::get('/article/{article}/details', ['as' => 'story.show' , 'uses' => 'Frontend\ArticleController@show']);
+});
+
+Route::group(['middleware' => ['web','admin'],'namespace' => 'Admin', 'prefix' => 'api'], function () {
+
+    Route::get('source/refresh/{id}', ['uses' => 'SourceController@refresh'] );
+
 });

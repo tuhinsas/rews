@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 @section('title','Categories')
 @section('content')
-	<h1>All Categories</h1>
+	<h1>All Categories
+		<span class="uk-align-right"><a href="{{route('admin.category.create')}}" class="uk-button uk-button-primary">Add New Category</a></span>
+	</h1>
 	<hr>
 	<table class="uk-table">
 		<thead>

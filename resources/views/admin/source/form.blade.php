@@ -26,12 +26,12 @@
 	            {!! Form::text('url', null, ['class' => 'uk-width-1-1 uk-form-large']) !!}
 	        </div>
 	    </div>
-	    <!-- <div class="uk-form-row">
+	    <div class="uk-form-row">
 	        <label for="category_id" class="uk-form-label">Category</label>
 	        <div class="uk-form-controls">
-	            {!! Form::text('category_id', null, ['class' => 'uk-width-1-1 uk-form-large']) !!}
+	            {!! Form::select('category', $categories, null, ['class' => 'uk-width-1-1 uk-form-large','placeholder' => 'Please Select']) !!}
 	        </div>
-	    </div> -->
+	    </div>
 	    <div class="uk-form-row">
 	        <label for="autograb" class="uk-form-label">Autograb</label>
 	        <div class="uk-form-controls">

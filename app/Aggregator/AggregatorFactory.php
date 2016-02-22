@@ -18,13 +18,13 @@ class AggregatorFactory
 		$this->config = $config;
 	}
 
-	public function make($url = [], $limit = 10, $force = false)
+	public function make($urls = [], $limit = 10, $force = false)
 	{
 		$this->simplepie = new SimplePie();
 
 		$this->configure();
 
-		$this->simplepie->set_feed_url($url);
+		$this->simplepie->set_feed_url($urls);
 
 		$this->simplepie->set_item_limit($limit);
 

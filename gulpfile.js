@@ -29,6 +29,7 @@ gulp.task("copyfiles",function(){
 });
 elixir(function(mix) {
     mix.copy('vendor/bower_components/Chart.js/Chart.js', 'resources/assets/js/vendor/');
+    mix.copy('vendor/bower_components/vue/dist/vue.js', 'resources/assets/js/vendor/');
 });
 elixir(function(mix) {
     mix.less([
@@ -43,7 +44,8 @@ elixir(function(mix) {
     	'vendor/jquery.js',
     	'vendor/uikit/uikit.js',
     	'vendor/uikit/components/**',
-    	'vendor/Chart.js'
+    	'vendor/Chart.js',
+        'vendor/vue.js'
     	],
     	'public/js/main.js'
     );
