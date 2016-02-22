@@ -25,7 +25,7 @@
             </div>
             <div class="datails-description">
                 <h1><strong>{{ $article->title}}</strong></h1>
-                <h3 class="uk-text-muted">From <a href="#">Mashable</a> at 
+                <h3 class="uk-text-muted">From <a href="#">{{ $article->source->name }}</a> at 
                     <strong>{{ date('F d, Y - h:m a' , strtotime($article->published_at)) }}</strong>
                 </h3>
                 <p>{{ $article->description }}</p>

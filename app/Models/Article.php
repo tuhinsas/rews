@@ -28,4 +28,9 @@ class Article extends Model
     {
         return $this->hasOne('App\Models\Media', 'object_id');
     }
+
+    public function source()
+    {
+        return $this->belongsTo('App\Models\Source');
+    }
 }
