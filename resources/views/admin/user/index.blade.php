@@ -9,7 +9,6 @@
 				<th>#</th>
 				<th>Name</th>
 				<th>Email</th>
-				<th>Last Updated</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -19,7 +18,6 @@
 				<td>{{ $index+1 }}</td>
 				<td>{{ $user->name }}</td>
 				<td>{{ $user->email }}</td>
-				<td>{{ $user->updated_at->diffForHumans() }}</td>
 				<td>
 					<div class="uk-button-group">
 						<a href="{{ route('admin.user.edit', $user->id) }}" class="uk-button uk-button-primary">
