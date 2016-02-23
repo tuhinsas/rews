@@ -45,6 +45,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/home', 'HomeController@index');
 
     Route::get('/article/{article}/details', ['as' => 'story.show' , 'uses' => 'Frontend\ArticleController@show']);
+
+    Route::get('/category/{category}/show', ['as' => 'category.show' , 'uses' => 'Frontend\CategoryController@show']);
 });
 
 Route::group(['middleware' => ['web','admin'],'namespace' => 'Admin', 'prefix' => 'api'], function () {

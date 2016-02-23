@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Category;
 use Auth;
 
 class HomeController extends Controller
@@ -33,7 +34,9 @@ class HomeController extends Controller
 
         $articles = Article::orderBy('published_at','desc')->get();
         
-        return view('frontend.home',compact('articles'));
+        $categories = Category::all();
+
+        return view('frontend.home',compact('articles','categories'));
     }
 
     public function details()

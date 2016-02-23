@@ -25,7 +25,7 @@ class UpdateSourceRequest extends Request
     {
         return [
             'name' => ['required','alpha_num'],
-            'type' => ['required','alpha_num'],
+            'type' => ['alpha_num'],
             'url'  => ['required','url','unique:sources,id,'.$this->get('id')],
             'autograb' => ['boolean'],
             'status'    => ['in:published,hidden']

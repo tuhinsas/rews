@@ -85,7 +85,9 @@ class SourceController extends Controller
     {
         $source = $this->sources->findOrFail($id);
 
-        return view('admin.source.form',compact('source'));
+        $categories = \App\Models\Category::lists('title','id');
+
+        return view('admin.source.form',compact('source','categories'));
     }
 
     /**
@@ -99,7 +101,11 @@ class SourceController extends Controller
     {
         $source = $this->sources->findOrFail($id);
 
+        $categoryId = $request->input('category');
+
         $source->fill($request->all())->save();
+
+        $source->category()->sync($categoryId);
 
         return redirect(route('admin.source.edit', $source->id))->with('info','The Source has been updated.');
     }

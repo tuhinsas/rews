@@ -2,14 +2,10 @@
     <div class="mdl-layout__header-row">
       <!-- Title -->
       <span class="mdl-layout-title"><i class="material-icons">search</i></span>
-      <nav class="mdl-navigation"> 
-        <a class="mdl-navigation__link" href="">Top Stories</a>
-        <a class="mdl-navigation__link" href="">World</a>
-        <a class="mdl-navigation__link" href="">Business</a>
-        <a class="mdl-navigation__link" href="">Technology</a>
-        <a class="mdl-navigation__link" href="">Entertainment</a>
-        <a class="mdl-navigation__link" href="">Sports</a>
-        <a class="mdl-navigation__link" href="">Science</a>
+      <nav class="mdl-navigation">
+      @foreach($categories as $category)
+        <a class="mdl-navigation__link" href="{{ route('category.show', $category->id)}}">{{ $category->title}}</a>
+      @endforeach
         <a class="mdl-navigation__link" href=""><i class="material-icons">playlist_add</i></a>
       </nav>
       <!-- Add spacer, to align navigation to the right -->
